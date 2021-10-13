@@ -53,7 +53,7 @@ Edits a student’s information such as n/NAME, p/PHONE_NUMBER.
 Edits a tuition class at specified t/TIME.
 
 #### Editing a student: `editstudent`
-Format: `editstudent INDEX [n/NAME] [p/PHONE] [e/EMAIL] [a/ADDRESS] [t/TAG]…`
+Format: `editstudent INDEX [n/NAME] [p/PHONE] [e/EMAIL] [a/ADDRESS]`
 
 #### Editing a class: `editclass`
 Format: `editclass INDEX l/limit t/time n/NAME,NAME,NAME... [t/TAG]…`
@@ -114,7 +114,7 @@ Action | Format
 ***Add Class*** | `addclass l/limit t/time [s/NAME,NAME,NAME...] [r/REMARK] [t/TAG]…`
 ***View Student*** | `student [INDEX]`
 ***View Class*** | `class [INDEX]`
-***Edit Student*** | `editstudent [INDEX] [n/NAME] [p/PHONE] [e/EMAIL] [a/ADDRESS]  [t/TAG]…`
+***Edit Student*** | `editstudent [INDEX] [n/NAME] [p/PHONE] [e/EMAIL] [a/ADDRESS]`
 ***Edit Class*** | `editclass [INDEX] [n/NAME] [p/PHONE] [e/EMAIL] [a/ADDRESS] [t/TAG]…`
 ***Delete Student*** | `deletestudent [INDEX]`
 ***Delete Class*** | `deleteclass [INDEX]`
