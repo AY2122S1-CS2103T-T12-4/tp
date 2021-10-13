@@ -27,10 +27,10 @@ public class AddToClassCommand extends Command {
             + PREFIX_TUITION_CLASS + "CLASS_INDEX"
             + "\n" + "Example1: " + COMMAND_WORD + " si/3 tc/3"
             + "\n" + "Example2: " + COMMAND_WORD + " s/Felicia,James tc/3";
-    public static final String MESSAGE_SUCCESS = "New student %1$s added to class.";
+    public static final String MESSAGE_SUCCESS = "New students: %1$s added to class";
     private static final String MESSAGE_STUDENT_EXISTS = "Student %1$s is already in the class";
     private static final String MESSAGE_CLASS_IS_FULL = "The following students are not "
-            + "added due to class limit: ";
+            + "added due to class limit";
     private static final String MESSAGE_STUDENT_NOT_FOUND = "The following students are not "
             + "found in the address book: ";
     private static final String MESSAGE_NO_STUDENT_ADDED = "No student has been added.";
@@ -147,7 +147,7 @@ public class AddToClassCommand extends Command {
             Person studentToAdd = person;
             Person studentToChange = person;
             studentToAdd.addClass(modifiedClass);
-            studentToAdd.addTag(new Tag(modifiedClass.getName().getName() + " "
+            studentToAdd.addTag(new Tag(modifiedClass.getName().getName() + " | "
                     + modifiedClass.getTimeslot().time));
             updateModel(model, tuitionClass, modifiedClass, studentToAdd, studentToChange);
         }
@@ -169,7 +169,7 @@ public class AddToClassCommand extends Command {
         }
         studentToAdd.addClass(modifiedClass);
         studentToAdd.addTag(new Tag(modifiedClass.getName().getName()
-                + " " + modifiedClass.getTimeslot().time));
+                + " | " + modifiedClass.getTimeslot().time));
         updateModel(model, tuitionClass, modifiedClass, studentToAdd, studentToChange);
         return new CommandResult(String.format(MESSAGE_SUCCESS, studentToAdd.getName().fullName, modifiedClass));
     }
