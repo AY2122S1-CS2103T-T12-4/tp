@@ -16,13 +16,13 @@ public class AddClassCommand extends Command {
     public static final String COMMAND_WORD = "addclass";
 
     public static final String MESSAGE_SUCCESS = "New tuition class added: %1$s";
-    public static final String MESSAGE_DUPLICATE_CLASS = "This time slot has already been taken in the address book";
-    public static final String MESSAGE_STUDENT_NOT_FOUND = "The following students are not found in the address book: ";
+    public static final String MESSAGE_DUPLICATE_CLASS = "This time slot has already been taken";
+    public static final String MESSAGE_STUDENT_NOT_FOUND = "The following students are not found: ";
 
     public static final String MESSAGE_USAGE = COMMAND_WORD
             + ": Add tuition class given name, limit, sessions, timeslot, and student \n"
-            + "Parameters: NAME LIMIT COUNTER TIMESLOT STUDENT\n"
-            + "Example: " + COMMAND_WORD + " n/Physics l/10 c/4 ts/Mon 11:00-14:00 s/Alex Yeoh";
+            + "Parameters: NAME LIMIT TIMESLOT STUDENT\n"
+            + "Example: " + COMMAND_WORD + " n/Physics l/10 ts/Mon 11:00-14:00 s/Alex Yeoh";
 
     private static final String MESSAGE_CLASS_LIMIT_EXCEEDED = "The following students are not "
             + "added due to class limit: ";
@@ -81,7 +81,7 @@ public class AddClassCommand extends Command {
             }
             if (newStudents.size() >= limit) {
                 //valid students not added due to limit exceeded.
-                if (!notAddedStudent.contains(s)) {
+                if (!notAddedStudent.contains(s) && !newStudents.contains(s)) {
                     notAddedStudent.add(s);
                 }
                 continue;
